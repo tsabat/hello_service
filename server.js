@@ -8,6 +8,11 @@ app.get('/hello', function(req, res){
   res.end(body);
 });
 
-var port = process.argv[2];
+var port = 80;
+
+if (process.argv[2] != undefined) {
+  var port = process.argv[2];
+}
+
 app.listen(port);
 console.log('Listening on port ' + port);
